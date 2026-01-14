@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>代码嘻嘻</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;600;800&family=Press+Start+2P&family=Zcool+KuaiLe&display=swap');
+      
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      }
+      .code-font {
+        font-family: 'Fira Code', monospace;
+      }
+      .pixel-font {
+        font-family: 'Press Start 2P', cursive;
+      }
+      .fun-font {
+        font-family: 'Zcool KuaiLe', cursive, system-ui; /* Fallback to system if Zcool fails, but it's a google font */
+      }
+      
+      /* Custom scrollbar for code blocks */
+      .code-scroll::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        background: #0f172a;
+      }
+      .code-scroll::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 4px;
+      }
+      .code-scroll::-webkit-scrollbar-thumb:hover {
+        background: #475569;
+      }
+
+      /* Gamified Animations */
+      @keyframes float {
+        0% { transform: translate(0px, 0px) rotate(0deg); }
+        33% { transform: translate(30px, -50px) rotate(10deg); }
+        66% { transform: translate(-20px, 20px) rotate(-5deg); }
+        100% { transform: translate(0px, 0px) rotate(0deg); }
+      }
+
+      @keyframes float-delayed {
+        0% { transform: translate(0px, 0px) rotate(0deg); }
+        50% { transform: translate(-40px, 30px) rotate(-10deg); }
+        100% { transform: translate(0px, 0px) rotate(0deg); }
+      }
+
+      .animate-float {
+        animation: float 20s ease-in-out infinite;
+      }
+      .animate-float-delayed {
+        animation: float-delayed 25s ease-in-out infinite;
+      }
+
+      @keyframes pop-in {
+        0% { transform: scale(0.8); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      
+      .animate-pop-in {
+        animation: pop-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+
+      @keyframes shine {
+        0% { background-position: 200% center; }
+        100% { background-position: -200% center; }
+      }
+      
+      .bg-shine {
+        background-size: 200% auto;
+        animation: shine 3s linear infinite;
+      }
+
+      .glass-panel {
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      @keyframes glitch {
+        0% { transform: translate(0); }
+        20% { transform: translate(-2px, 2px); }
+        40% { transform: translate(-2px, -2px); }
+        60% { transform: translate(2px, 2px); }
+        80% { transform: translate(2px, -2px); }
+        100% { transform: translate(0); }
+      }
+      
+      .glitch-hover:hover {
+        animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "canvas-confetti": "https://esm.sh/canvas-confetti@^1.9.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
